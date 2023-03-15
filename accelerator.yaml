@@ -1,0 +1,75 @@
+accelerator:
+  displayName: MLFlow Accelerator
+  description: Project template for deploying MLFlow to a Kubernetes cluster or TAP
+  iconUrl: https://upload.wikimedia.org/wikipedia/commons/1/1b/ML_Ops_Venn_Diagram.svg
+  tags:
+  - "ML"
+  - "AI"
+  - "machinelearning"
+  - "datascience"
+  - "MLOps"
+  - "artificialintelligence"
+  - "python"
+  - "java"
+  - "R"
+  - "mlflow"
+  options:
+    - name: type
+      inputType: text
+      display: true
+      label: 'Type'
+    - name: provider
+      inputType: text
+      display: true
+      label: 'Provider'
+    - name: host
+      inputType: text
+      display: true
+      label: 'Host'
+    - name: port
+      inputType: text
+      display: true
+      label: 'Port'
+    - name: database
+      inputType: text
+      display: true
+      label: 'Database'
+    - name: username
+      inputType: text
+      display: true
+      label: 'Username'
+    - name: password
+      inputType: text
+      display: true
+      label: 'Password'
+    - name: claim
+      inputType: text
+      display: true
+      label: 'Name of Service Claim'
+
+  engine:
+    type: Merge
+    sources:
+      - type: Chain
+        transformations:
+          - type: Include
+            patterns: [ '**' ]
+          - type: ReplaceText
+            substitutions:
+              - text: _type_
+                with: "#type"
+              - text: _provider_
+                with: "#provider"
+              - text: _host_
+                with: "#host"
+              - text: _port_
+                with: "#port"
+              - text: _database_
+                with: "#database"
+              - text: _username_
+                with: "#username"
+              - text: _password_
+                with: "#website3"
+              - text: _claim_
+                with: "#claim"
+
