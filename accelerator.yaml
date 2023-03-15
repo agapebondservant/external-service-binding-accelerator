@@ -46,6 +46,11 @@ accelerator:
       inputType: text
       display: true
       label: 'Name of Service Claim'
+    - name: namespace
+      inputType: text
+      display: true
+      label: 'Kubernetes Namespace to deploy the claim'
+      defaultValue: 'default'
 engine:
   type: Merge
   sources:
@@ -71,4 +76,6 @@ engine:
               with: "#password"
             - text: MYCLAIM
               with: "#claim"
+            - text: MYNAMESPACE
+              with: "#namespace"
 
