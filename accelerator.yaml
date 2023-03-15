@@ -46,30 +46,29 @@ accelerator:
       inputType: text
       display: true
       label: 'Name of Service Claim'
-
-  engine:
-    type: Merge
-    sources:
-      - type: Chain
-        transformations:
-          - type: Include
-            patterns: [ 'resources/**' ]
-          - type: ReplaceText
-            substitutions:
-              - text: MYTYPE
-                with: "#type"
-              - text: MYPROVIDER
-                with: "#provider"
-              - text: MYHOST
-                with: "#host"
-              - text: MYPORT
-                with: "#port"
-              - text: MYDATABASE
-                with: "#database"
-              - text: MYUSERNAME
-                with: "#username"
-              - text: MYPASSWORD
-                with: "#website3"
-              - text: MYCLAIM
-                with: "#claim"
+engine:
+  type: Merge
+  sources:
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ 'resources/**' ]
+        - type: ReplaceText
+          substitutions:
+            - text: MYTYPE
+              with: "#type"
+            - text: MYPROVIDER
+              with: "#provider"
+            - text: MYHOST
+              with: "#host"
+            - text: MYPORT
+              with: "#port"
+            - text: MYDATABASE
+              with: "#database"
+            - text: MYUSERNAME
+              with: "#username"
+            - text: MYPASSWORD
+              with: "#website3"
+            - text: MYCLAIM
+              with: "#claim"
 
