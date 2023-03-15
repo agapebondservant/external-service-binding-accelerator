@@ -1,12 +1,10 @@
 ---
-apiVersion: v1
-items:
-  - apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-    kind: ResourceClaim
-    metadata:
-      name: MYCLAIM
-    spec:
-      ref:
-        apiVersion: v1
-        kind: Secret
-        name: external-MYTYPE-MYPROVIDER-binding-compatible
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ResourceClaim
+metadata:
+  name: MYCLAIM
+spec:
+  ref:
+    apiVersion: v1
+    kind: Secret
+    name: external-MYTYPE-MYPROVIDER-binding-compatible
