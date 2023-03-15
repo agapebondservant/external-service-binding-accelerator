@@ -68,7 +68,7 @@ engine:
             - text: MYUSERNAME
               with: "#username"
             - text: MYPASSWORD
-              with: "#website3"
+              with: "#password"
             - text: MYCLAIM
               with: "#claim"
 
