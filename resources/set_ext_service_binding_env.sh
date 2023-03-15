@@ -5,4 +5,4 @@ PORT=MYPORT
 DATABASE=MYDATABASE
 USERNAME=MYUSERNAME
 PASSWORD=MYPASSWORD
-envsubst < resources/service-binding-secret.template.taml > resources/service-binding-secret.yaml
+envsubst < resources/service-binding-secret.template.yaml > resources/service-binding-secret.yaml
