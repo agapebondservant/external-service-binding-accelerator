@@ -53,23 +53,23 @@ accelerator:
       - type: Chain
         transformations:
           - type: Include
-            patterns: [ '**' ]
+            patterns: [ 'resources/**' ]
           - type: ReplaceText
             substitutions:
-              - text: _type_
+              - text: MYTYPE
                 with: "#type"
-              - text: _provider_
+              - text: MYPROVIDER
                 with: "#provider"
-              - text: _host_
+              - text: MYHOST
                 with: "#host"
-              - text: _port_
+              - text: MYPORT
                 with: "#port"
-              - text: _database_
+              - text: MYDATABASE
                 with: "#database"
-              - text: _username_
+              - text: MYUSERNAME
                 with: "#username"
-              - text: _password_
+              - text: MYPASSWORD
                 with: "#website3"
-              - text: _claim_
+              - text: MYCLAIM
                 with: "#claim"
 
