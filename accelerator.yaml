@@ -1,6 +1,6 @@
 accelerator:
-  displayName: MLFlow Accelerator
-  description: Project template for deploying MLFlow to a Kubernetes cluster or TAP
+  displayName: External Service Binding Accelerator
+  description: Generates ResourceClaims for binding an external service to TAP workloads
   iconUrl: https://upload.wikimedia.org/wikipedia/commons/1/1b/ML_Ops_Venn_Diagram.svg
   tags:
   - "ML"
