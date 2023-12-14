@@ -1,0 +1,45 @@
+apiVersion: secretgen.carvel.dev/v1alpha1
+kind: SecretExport
+metadata:
+  name: external-MYTYPE-MYPROVIDER-binding-compatible
+  namespace: BACKSTAGE_SOURCE_NAMESPACE
+spec:
+  toNamespaces:
+    - BACKSTAGE_TARGET_NAMESPACE
+---
+apiVersion: secretgen.carvel.dev/v1alpha1
+kind: SecretImport
+metadata:
+  name: external-MYTYPE-MYPROVIDER-binding-compatible
+  namespace: BACKSTAGE_TARGET_NAMESPACE
+  labels:
+    backstage-dashboard-category: BACKSTAGE_CATEGORY
+    backstage-dashboard-name: BACKSTAGE_SERVICE_NAME
+    backstage-dashboard-type: service
+spec:
+  fromNamespace: BACKSTAGE_SOURCE_NAMESPACE
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ClusterInstanceClass
+metadata:
+  name: bkstg-BACKSTAGE_CATEGORY-BACKSTAGE_SERVICE_NAME
+spec:
+  description:
+    short: BACKSTAGE_SERVICE_DESCRIPTION
+  pool:
+    kind: secret
+    labelSelector:
+      matchLabels:
+        backstage-dashboard-name: BACKSTAGE_SERVICE_NAME
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ClassClaim
+metadata:
+  labels:
+    backstage-dashboard-category: BACKSTAGE_CATEGORY
+    backstage-dashboard-name: BACKSTAGE_SERVICE_NAME
+    backstage-dashboard-type: binding
+  name: bkstg-BACKSTAGE_CATEGORY-BACKSTAGE_SERVICE_NAME
+spec:
+  classRef:
+    name: bkstg-BACKSTAGE_CATEGORY-BACKSTAGE_SERVICE_NAME

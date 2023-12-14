@@ -49,8 +49,34 @@ accelerator:
     - name: namespace
       inputType: text
       display: true
-      label: 'Kubernetes Namespace to deploy the claim'
+      label: 'Kubernetes Namespace to deploy the resource claim'
       defaultValue: 'default'
+    - name: backstage_source_namespace
+      inputType: text
+      display: true
+      label: 'Source Kubernetes Namespace that will export the secret for the Backstage Panel'
+      defaultValue: 'default'
+    - name: backstage_target_namespace
+      inputType: text
+      display: true
+      label: 'Target Kubernetes Namespace that will import the secret for the Backstage Panel'
+      defaultValue: 'default'
+    - name: backstage_category
+      inputType: text
+      display: true
+      label: 'Backstage Panel category of this service'
+      defaultValue: 'default'
+    - name: backstage_service_name
+      inputType: text
+      display: true
+      label: 'User-friendly Backstage Panel name of this service'
+      defaultValue: 'default'
+    - name: backstage_service_description
+      inputType: text
+      display: true
+      label: 'Description of this service'
+      defaultValue: 'default'
+
 engine:
   type: Merge
   sources:
@@ -78,4 +104,14 @@ engine:
               with: "#claim"
             - text: MYNAMESPACE
               with: "#namespace"
+            - text: BACKSTAGE_SOURCE_NAMESPACE
+              with: "#backstage_source_namespace"
+            - text: BACKSTAGE_TARGET_NAMESPACE
+              with: "#backstage_target_namespace"
+            - text: BACKSTAGE_CATEGORY
+              with: "#backstage_category"
+            - text: BACKSTAGE_SERVICE_NAME
+              with: "#backstage_service_name"
+            - text: BACKSTAGE_SERVICE_DESCRIPTION
+              with: "#backstage_service_description"
 
