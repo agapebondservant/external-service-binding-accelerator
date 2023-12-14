@@ -3,16 +3,8 @@ accelerator:
   description: Generates ResourceClaims for binding an external service to TAP workloads
   iconUrl: https://upload.wikimedia.org/wikipedia/commons/1/1b/ML_Ops_Venn_Diagram.svg
   tags:
-  - "ML"
-  - "AI"
-  - "machinelearning"
-  - "datascience"
-  - "MLOps"
-  - "artificialintelligence"
-  - "python"
-  - "java"
-  - "R"
-  - "mlflow"
+  - "servicebinding"
+  - "data"
   options:
     - name: type
       inputType: text
@@ -110,4 +102,3 @@ engine:
               with: "#backstage_service_name"
             - text: BACKSTAGE_SERVICE_DESCRIPTION
               with: "#backstage_service_description"
-
