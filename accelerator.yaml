@@ -65,18 +65,14 @@ accelerator:
       inputType: text
       display: true
       label: 'Backstage Panel category of this service'
-      defaultValue: 'default'
     - name: backstage_service_name
       inputType: text
       display: true
       label: 'User-friendly Backstage Panel name of this service'
-      defaultValue: 'default'
     - name: backstage_service_description
       inputType: text
       display: true
       label: 'Description of this service'
-      defaultValue: 'default'
-
 engine:
   type: Merge
   sources:
